@@ -72,12 +72,12 @@ class Client:
         # Audio reciever and sender threads setup, and start
         self.sender = AudioSender(ip, port1)
         sender_thread = threading.Thread\
-            (target=self.sender.start_stream())
+            (target=self.sender.start_stream)
 
         self.reciever = AudioReceiver(socket.gethostbyname
                                       (socket.gethostname()), port2)
         recieve_thread = threading.Thread\
-            (target=self.reciever.start_server())
+            (target=self.reciever.start_server)
 
         recieve_thread.start()
         sender_thread.start()
